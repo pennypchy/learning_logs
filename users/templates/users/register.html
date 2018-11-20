@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Log In</title>
+  </head>
+  <body>
+    {% extends "learning_logs/base.html" %}
+    {% block content %}
+
+      <form class="" action="{% url 'users:register' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+
+        <button type="button" name="submit">Register</button>
+        <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
+      </form>
+
+    {% endblock content %}
+  </body>
+</html>
